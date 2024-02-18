@@ -7,5 +7,6 @@ namespace WEBAPIPractise.Controllers
     [ApiController]
     public class OrderController : ControllerBase
     {
+
     }
 }
