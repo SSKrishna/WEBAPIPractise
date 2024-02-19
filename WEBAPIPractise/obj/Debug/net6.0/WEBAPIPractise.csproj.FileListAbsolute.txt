@@ -67,3 +67,5 @@ C:\Users\guntu\Source\Repos\WEBAPIPractise\WEBAPIPractise\obj\Debug\net6.0\refin
 C:\Users\guntu\Source\Repos\WEBAPIPractise\WEBAPIPractise\obj\Debug\net6.0\WEBAPIPractise.pdb
 C:\Users\guntu\Source\Repos\WEBAPIPractise\WEBAPIPractise\obj\Debug\net6.0\WEBAPIPractise.genruntimeconfig.cache
 C:\Users\guntu\Source\Repos\WEBAPIPractise\WEBAPIPractise\obj\Debug\net6.0\ref\WEBAPIPractise.dll
+C:\Users\guntu\Source\Repos\WEBAPIPractise\WEBAPIPractise\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\guntu\Source\Repos\WEBAPIPractise\WEBAPIPractise\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll

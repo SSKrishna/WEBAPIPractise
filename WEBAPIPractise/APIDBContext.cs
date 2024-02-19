@@ -10,5 +10,7 @@ namespace WEBAPIPractise
         public DbSet<Product> Products { get;set; }
         public DbSet<Customer> Customers { get;set; }
         public DbSet<Order> orders { get; set; }
+
+        public DbSet<Log> log { get;set; }
     }
 }

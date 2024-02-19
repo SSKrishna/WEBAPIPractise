@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WEBAPIPractise;
 
@@ -11,9 +12,10 @@ using WEBAPIPractise;
 namespace WEBAPIPractise.Migrations
 {
     [DbContext(typeof(APIDBContext))]
-    partial class APIDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240219033013_LogTableCreation")]
+    partial class LogTableCreation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

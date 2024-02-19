@@ -1,9 +1,13 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using WEBAPIPractise;
 using WEBAPIPractise.BLL.Implementation;
 using WEBAPIPractise.BLL.Interface;
 using WEBAPIPractise.DAL.Implementation;
 using WEBAPIPractise.DAL.Interface;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +28,27 @@ builder.Services.AddScoped<IProductBLL,ProductBLL>();
 
 builder.Services.AddDbContext<APIDBContext>(option =>
 option.UseSqlServer(builder.Configuration.GetConnectionString("ContactAPIConnectionString")));
+
+//// Configure JWT authentication
+//    builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+//        .AddJwtBearer(options =>
+//        {
+//            options.TokenValidationParameters = new TokenValidationParameters
+//            {
+//                ValidateIssuer = true,
+//                ValidateAudience = true,
+//                ValidateLifetime = true,
+//                ValidateIssuerSigningKey = true,
+//                ValidIssuer = "yourIssuer",
+//                ValidAudience = "yourAudience",
+//                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("yourSecretKey"))
+//            };
+//        });
+
+builder.Services.AddLogging(build =>
+
+    build.AddProvider(new DatabaseLoggerProvider(builder.Configuration.GetConnectionString("ContactAPIConnectionString"))));
+
 
 var app = builder.Build();
 

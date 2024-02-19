@@ -6,9 +6,11 @@ namespace WEBAPIPractise.BLL.Implementation
     public class ProductBLL : IProductBLL
     {
         private IProductDAL _IProductdal { get; set; }
-        public ProductBLL(IProductDAL IPrdtdal) 
+        private ILogger _Logger;
+        public ProductBLL(IProductDAL IPrdtdal,ILogger logger) 
         { 
             _IProductdal = IPrdtdal;
+            _Logger = logger;
         }
         public bool DeleteProduct(long productId)
         {
@@ -18,7 +20,7 @@ namespace WEBAPIPractise.BLL.Implementation
             }
             catch(Exception ex)
             {
-
+                _Logger.LogError("Failed to Delete Product");
             }
             return false;
         }
