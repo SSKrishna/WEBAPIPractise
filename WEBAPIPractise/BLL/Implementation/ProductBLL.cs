@@ -20,7 +20,7 @@ namespace WEBAPIPractise.BLL.Implementation
             }
             catch(Exception ex)
             {
-                _Logger.LogError("Failed to Delete Product");
+                _Logger.LogError(ex,"Failed to Delete Product");
             }
             return false;
         }
@@ -33,7 +33,7 @@ namespace WEBAPIPractise.BLL.Implementation
             }
             catch(Exception ex)
             {
-
+                _Logger.LogError(ex, "Failed to Get All Products.");
             }
             return new List<Models.Product>();
         }
@@ -46,7 +46,7 @@ namespace WEBAPIPractise.BLL.Implementation
             }
             catch(Exception ex)
             {
-
+                _Logger.LogError(ex, "Failed to Get Product.");
             }
             return new Models.Product();
         }
@@ -59,7 +59,7 @@ namespace WEBAPIPractise.BLL.Implementation
             }
             catch (Exception e)
             {
-
+                _Logger.LogError(e, "Failed to insert Products");
             }
         }
 
@@ -71,7 +71,7 @@ namespace WEBAPIPractise.BLL.Implementation
             }
             catch(Exception ex)
             {
-
+                _Logger.LogError(ex, "Failed to update Product.");
             }
             return new Models.Product();
 
