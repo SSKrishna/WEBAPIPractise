@@ -26,7 +26,7 @@ namespace WEBAPIPractise.Controllers
         }
 
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public IActionResult GetProductById(int id)
         {
             var product =  _productBLL.GetProducts(id);
