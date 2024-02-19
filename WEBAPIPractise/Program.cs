@@ -1,5 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using WEBAPIPractise;
+using WEBAPIPractise.BLL.Implementation;
+using WEBAPIPractise.BLL.Interface;
+using WEBAPIPractise.DAL.Implementation;
+using WEBAPIPractise.DAL.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +13,14 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//DAL services
+builder.Services.AddScoped<IProductDAL, ProductDAL>();
+
+
+//BLL sevices
+builder.Services.AddScoped<IProductBLL,ProductBLL>();
+ 
 
 builder.Services.AddDbContext<APIDBContext>(option =>
 option.UseSqlServer(builder.Configuration.GetConnectionString("ContactAPIConnectionString")));

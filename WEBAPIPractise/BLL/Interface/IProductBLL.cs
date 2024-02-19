@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using WEBAPIPractise.Models;
+﻿using WEBAPIPractise.Models;
 
-namespace WEBAPIPractise.DAL.Interface
+namespace WEBAPIPractise.BLL.Interface
 {
-    public interface IProductDAL
+    public interface IProductBLL
     {
         List<Product> GetAllProducts();
         Product GetProducts(long productId);
